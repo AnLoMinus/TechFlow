@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechFlow Solutions</title>
+  <meta name="description" content="פתרונות טכנולוגיים מתקדמים לעסקים וללקוחות פרטיים" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      background: #050816;
+      color: white;
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(circle at top right, rgba(0,102,255,.15), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(255,174,0,.12), transparent 30%);
+      z-index: -1;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      position: relative;
+      text-align: center;
+    }
+
+    .hero {
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+      gap: 50px;
+      align-items: center;
+    }
+
+    .hero img {
+      width: 100%;
+      border-radius: 30px;
+      box-shadow: 0 0 50px rgba(0,0,0,.5);
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      font-weight: 900;
+      background: linear-gradient(to left,#fff,#f0c76b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      color: #d4d4d4;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: .3s ease;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg,#0f6fff,#5aa2ff);
+      color: white;
+    }
+
+    .btn-secondary {
+      border: 1px solid #f0c76b;
+      color: #f0c76b;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.4);
+    }
+
+    section {
+      padding: 100px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    .section-title h2 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      color: #f0c76b;
+    }
+
+    .section-title p {
+      color: #b5b5b5;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+      gap: 35px;
+    }
+
+    .service-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 28px;
+      overflow: hidden;
+      transition: .4s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(240,199,107,.4);
+      box-shadow: 0 20px 40px rgba(0,0,0,.45);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+
+    .service-content {
+      padding: 28px;
+    }
+
+    .service-content h3 {
+      font-size: 1.6rem;
+      color: #f0c76b;
+      margin-bottom: 10px;
+    }
+
+    .service-content h4 {
+      color: #59a3ff;
+      margin-bottom: 15px;
+    }
+
+    .service-content ul {
+      margin-top: 20px;
+      list-style: none;
+    }
+
+    .service-content li {
+      margin-bottom: 10px;
+      color: #d9d9d9;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 25px;
+    }
+
+    .contact-box {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      background: rgba(255,255,255,.05);
+      border-radius: 30px;
+      padding: 50px;
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .contact-box h3 {
+      font-size: 2.5rem;
+      color: #f0c76b;
+      margin-bottom: 20px;
+    }
+
+    footer {
+      padding: 40px;
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: #aaa;
+    }
+
+    @media(max-width:768px){
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      section {
+        padding: 80px 6%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="hero">
+    <div>
+      <h1>TechFlow Solutions</h1>
+      <p class="subtitle">
+        פתרונות טכנולוגיים מתקדמים לעסקים וללקוחות פרטיים • תקשורת ורשתות • פיתוח • מיתוג • מדיה • AI
+      </p>
+
+      <div class="buttons">
+        <a class="btn btn-primary" href="https://wa.me/972543285967" target="_blank">📲 יצירת קשר בוואטסאפ</a>
+        <a class="btn btn-secondary" href="#services">⚡ צפייה בשירותים</a>
+      </div>
+    </div>
+
+    <div>
+      <img src="https://github.com/user-attachments/assets/5c5aeeb9-7268-42e3-abfd-8052a7d2783e" alt="TechFlow Banner">
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="section-title">
+    <h2>👑 מי אנחנו</h2>
+    <p>
+      TechFlow Solutions מספקת מעטפת טכנולוגית מלאה לעסקים, יוצרים ויזמים.
+      שילוב בין חדשנות, יצירתיות וטכנולוגיה מתקדמת במקום אחד.
+    </p>
+  </div>
+
+  <div class="about">
+    <img src="https://github.com/user-attachments/assets/6fdec49a-6b48-44c6-90a9-6d676db1538b" alt="Lion Logo">
+
+    <div>
+      <h2 style="color:#f0c76b;font-size:2.5rem;margin-bottom:20px;">
+        Technology • Future • Solutions
+      </h2>
+
+      <p style="color:#d7d7d7;font-size:1.1rem;">
+        אנו מתמחים בפיתוח פתרונות דיגיטליים, הקמת תשתיות תקשורת,
+        אוטומציות חכמות, מיתוג, שיווק דיגיטלי, הפקות וידאו ומוזיקה,
+        תמיכה טכנית ושדרוג מערכות לעסקים.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-title">
+    <h2>🚀 קטלוג שירותים</h2>
+    <p>פתרונות מקצועיים עם עיצוב יוקרתי וטכנולוגיה מתקדמת</p>
+  </div>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <img src="https://github.com/user-attachments/assets/8493945f-049b-4926-8908-af0b69903be4" alt="תקשורת ורשתות">
+      <div class="service-content">
+        <h3>⚡ TechFlow Solutions</h3>
+        <h4>פתרונות תקשורת ורשתות</h4>
+        <p>התקנת תשתיות תקשורת ורשתות חכמות לעסקים ובתים פרטיים.</p>
+        <ul>
+          <li>✔ התקנות רשת</li>
+          <li>✔ אינטרנט חכם</li>
+          <li>✔ ציוד תקשורת</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <img src="https://github.com/user-attachments/assets/9cfdb682-8ae2-4f8a-b486-f3882e4303a0" alt="תמיכה טכנית">
+      <div class="service-content">
+        <h3>🛡️ Smart Support Pro</h3>
+        <h4>תמיכה טכנית ושירותי מחשוב</h4>
+        <p>פתרון תקלות, תחזוקה ושיפור ביצועים למחשבים ומערכות.</p>
+        <ul>
+          <li>✔ תיקון תקלות</li>
+          <li>✔ התקנות תוכנה</li>
+          <li>✔ אבטחה ושדרוגים</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <img src="https://github.com/user-attachments/assets/a543f4da-2f42-4532-8313-a4dc8a19f989" alt="פיתוח תוכנה">
+      <div class="service-content">
+        <h3>🚀 Code & Digital Systems</h3>
+        <h4>פיתוח תוכנה ואוטומציה</h4>
+        <p>מערכות חכמות, AI ואוטומציות לעסקים ויוצרים.</p>
+        <ul>
+          <li>✔ פיתוח מערכות</li>
+          <li>✔ אוטומציות עסקיות</li>
+          <li>✔ חדשנות דיגיטלית</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <img src="https://github.com/user-attachments/assets/2caeb006-c9c1-40d8-b727-f43bd680dc45" alt="מיתוג ועיצוב">
+      <div class="service-content">
+        <h3>🎨 Brand Vision Studio</h3>
+        <h4>מיתוג ועיצוב גרפי</h4>
+        <p>בניית מותג חזק עם עיצוב יוקרתי ומקצועי.</p>
+        <ul>
+          <li>✔ לוגואים</li>
+          <li>✔ מיתוג עסקי</li>
+          <li>✔ עיצוב לרשתות</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <img src="https://github.com/user-attachments/assets/71aaa0fb-23ac-409c-b71b-4c986203b72d" alt="שיווק דיגיטלי">
+      <div class="service-content">
+        <h3>📈 Digital Marketing Impact</h3>
+        <h4>שיווק דיגיטלי ופרסום</h4>
+        <p>אסטרטגיות שיווק מתקדמות שמביאות תוצאות.</p>
+        <ul>
+          <li>✔ קמפיינים</li>
+          <li>✔ רשתות חברתיות</li>
+          <li>✔ הגדלת חשיפה</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <img src="https://github.com/user-attachments/assets/dcc890f9-37c9-475d-ae55-20834c44d3cc" alt="הפקות מוזיקה">
+      <div class="service-content">
+        <h3>🎵 Sound & Music Production</h3>
+        <h4>הפקות מוזיקה וסאונד</h4>
+        <p>יצירת סאונד מקצועי, מוזיקה והפקות לפרויקטים.</p>
+        <ul>
+          <li>✔ הפקות מוזיקה</li>
+          <li>✔ עריכת סאונד</li>
+          <li>✔ מיקס מקצועי</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <img src="https://github.com/user-attachments/assets/8832b4d2-3de1-448d-a091-f6be82913183" alt="עריכת וידאו">
+      <div class="service-content">
+        <h3>🎬 Visual Media Productions</h3>
+        <h4>עריכת וידאו והפקות מדיה</h4>
+        <p>יצירת תוכן ויזואלי מקצועי שמספר סיפור.</p>
+        <ul>
+          <li>✔ סרטוני תדמית</li>
+          <li>✔ תוכן לרשתות</li>
+          <li>✔ עריכות מקצועיות</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact-box">
+    <h3>💬 מחפשים פתרונות טכנולוגיים מקצועיים?</h3>
+
+    <p style="margin-bottom:30px;color:#d7d7d7;">
+      אנחנו כאן כדי לקחת את העסק שלך לרמה הבאה.
+      שירות מקצועי, יצירתי ואמין במקום אחד.
+    </p>
+
+    <div class="buttons">
+      <a class="btn btn-primary" href="https://wa.me/972543285967" target="_blank">
+        📲 054-328-5967
+      </a>
+
+      <a class="btn btn-secondary" href="https://github.com/AnLoMinus/TechFlow" target="_blank">
+        🌐 GitHub Project
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>
+    © 2026 TechFlow Solutions — All Rights Reserved
+  </p>
+
+  <p style="margin-top:10px;">
+    Built with ⚡ by TechFlow Solutions
+  </p>
+</footer>
+
+</body>
+</html>
